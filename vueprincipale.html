@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Un titre</title>
+    <link href="{{ @BASE }}/f3style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <h1>Cartes graphiques : </h1>
+    <table>
+        <repeat group="{{ @cartes }}" value="{{ @une_carte }}">
+            <tr>
+                <td> <a href="{{ @BASE }}/carte/{{ @une_carte.Id }}">{{ @une_carte.Nom }}</a> </td>
+                <td> {{ @une_carte.Prix }} $ </td>
+            </tr>
+        </repeat>
+    </table>
+</body>
+</html>

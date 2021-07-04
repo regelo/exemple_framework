@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Détails d'une carte graphique</title>
+</head>
+<body>
+    <h1>Information sur la carte choisie : </h1>
+    <ul>
+        <li>ID : {{ @la_carte.Id }}</li>
+        <li>Nom : {{ @la_carte.Nom }}</li>
+        <li>Fabricant : {{ @la_carte.Fabricant }}</li>
+        <li>Prix : {{ @la_carte.Prix }} $</li>
+        <li>Description : {{ @la_carte.Description }}</li>
+    </ul>
+
+    <form method="post" action="/modifiercarte">
+        <label for="idescription">Nouvelle description : </label>
+        <textarea name="description" id="idescription" cols="60" rows="8">{{@la_carte.Description}}</textarea>
+        <input type="hidden" name="carteid" value="{{@la_carte.Id}}" />
+        <input type="submit" value="Changer la description" />
+    </form>
+
+</body>
+</html>
